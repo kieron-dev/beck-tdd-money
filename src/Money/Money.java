@@ -5,6 +5,6 @@ public class Money {
 
     public boolean equals(Object other) {
         Money money = (Money)other;
-        return money.amount == amount;
+        return money.amount == amount && money.getClass() == getClass();
     }
 }

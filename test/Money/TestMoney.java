@@ -17,6 +17,7 @@ public class TestMoney {
         Assert.assertNotEquals(new Dollar(5), new Dollar(6));
         Assert.assertEquals(new Franc(5), new Franc(5));
         Assert.assertNotEquals(new Franc(5), new Franc(6));
+        Assert.assertNotEquals(new Dollar(5), new Franc(5));
     }
 
     @Test
