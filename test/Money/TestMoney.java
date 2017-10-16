@@ -91,4 +91,15 @@ public class TestMoney {
         Assert.assertEquals(Money.dollar(15), result);
     }
 
+    @Test
+    public void testExpressionTimes() {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Expression expr = new Sum(fiveBucks, tenFrancs).times(2);
+        Money result = bank.reduce(expr, "USD");
+        Assert.assertEquals(Money.dollar(20), result);
+    }
+
 }
